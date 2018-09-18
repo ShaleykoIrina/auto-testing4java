@@ -3,7 +3,10 @@ package com.acme.edu;
 import org.hamcrest.CoreMatchers.*;
 import org.fest.assertions.api.Assertions;
 import org.junit.*;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
 import java.util.ArrayList;
@@ -18,8 +21,12 @@ import static org.junit.Assume.assumeTrue;
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ArrayListTest {
     private ArrayList<Object> sut;
+
+    @Mock
+    private Object filterStub; //=mock(Object.class)
 
     @BeforeClass @AfterClass
     public static void globalSetUp() {
