@@ -36,13 +36,23 @@
 - [Как группировать тесты в группы?](https://github.com/junit-team/junit4/wiki/aggregating-tests-in-suites)
 - [Более гибкий способ группировки тестов](https://github.com/junit-team/junit4/wiki/Categories)
 - Как обеспечить упрощение и читабельность проверок? [Hamcrest](https://github.com/junit-team/junit4/wiki/Matchers-and-assertthat) и [FEST](https://github.com/alexruiz/fest-assert-2.x/wiki/One-minute-starting-guide)
-- Как можно обеспечить повторное использование фикстур? [@BeforeXXX](https://github.com/junit-team/junit4/wiki/Test-fixtures) и FixtureBuilders 
-- Что из себя представляет проектный test framework?
 - Как обеспечить автономность модульного теста?
 - В чем разница между различными видами тест-дублеров?
 - Как верифицировать и валидировать сами тесты?
 - Практика: обоснованный выбор покрытия и реализация поддерживаемых модульных тестов для legacy-системы с контролем покрытия через Sonar и библиотеку пермутационного тестирования PIT
 - Демо: тест-дублирование REST-сервисов в интеграционном тесте – [WireMock](http://wiremock.org/docs/getting-started/) и [MockMVC](http://docs.spring.io/spring-security/site/docs/current/reference/html/test-mockmvc.html)
+- Как можно обеспечить повторное использование фикстур? [@BeforeXXX](https://github.com/junit-team/junit4/wiki/Test-fixtures) и FixtureBuilders
+
+### Введение в [JUnit5](https://junit.org/junit5/docs/current/user-guide/)
+- [Обзор новых возможностей](https://habr.com/post/337700/)
+
+
+### Тестопригодность дизайна системы
+- Критерии тестопригодности
+
+### Корпоративные тестовые фреймворки
+- Что такое собственный фреймворк?
+- Ключевые компоненты фреймворка
 
 ### Системное UI-тестирование на [Selenium](https://kreisfahrer.gitbooks.io/selenium-webdriver/content/index.html)
 - Как можно покрыть тестами UI системы?
@@ -58,7 +68,7 @@
 - Как работать из теста с асинхронными элементами? [Fluent API for Wait](https://github.com/bonigarcia/webdrivermanager-examples/blob/master/src/test/java/io/github/bonigarcia/wdm/test/PhatomJsTest.java)
 - Как обеспечить поддерживаемость тестов: изоляцию от структуры страниц, от переходов между страницам? PageObject [1](https://habrahabr.ru/post/134462/),[2](https://github.com/SeleniumHQ/selenium/wiki/PageFactory) и [StepObject](http://seleniumcamp.com/archive/selenium-camp-2013/materials/step-objects/)
 - Практика: обоснованный выбор покрытия и реализация поддерживаемых системных UI-тестов для legacy веб-приложения с контролем покрытия через Sonar
-- Надстройки над Selenium: Фукудид, HtmlElements, [Selenide](http://ru.selenide.org/quick-start.html)
+- Надстройки над Selenium: [Serenity](http://www.thucydides.info/#/), [Selenide](http://ru.selenide.org/quick-start.html), [HtmlElements](https://tech.yandex.ru/html-elements/)
 
 ### BDD на [Cucumber](https://cucumber.io/docs/reference/jvm)
 - Что такое тестовый DSL? И почему BDD не про библиотеки и фреймворки.
@@ -67,3 +77,9 @@
 - Как [писать тест](http://www.dokwork.ru/2015/08/cucumber.html) на Cucumber DSL?
 - Как отобразить тестовый Cucumber DSL на java-код?
 - Практика: перенос готовых системных UI-тестов на Cucumber BDD
+
+### Введение в нагрузочное тестирование
+- Формулировка требований к производительности
+- Виды нагрузочного тестирования
+- Инструмент [JMH](http://openjdk.java.net/projects/code-tools/jmh/)
+- Инструмент [JMeter](https://jmeter.apache.org)
