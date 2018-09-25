@@ -10,6 +10,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.core.StringContains.*;
@@ -120,7 +122,7 @@ public class ArrayListTest {
     }
 
     /**
-     * Interaction-based testing
+     * Interaction-based testing | Mocking
      */
     @Test @Ignore //Counter anti-pattern
     public void shouldGetStringRepresentationFromElementsWhenToString3() {
@@ -143,9 +145,34 @@ public class ArrayListTest {
         //endregion
     }
 
+    @Test
+    public void hashSetShouldCallHashCodeWhenAddElementIT() {
+        //region Given
+        LoggerSaver saverSpy = spy(new ConsoleLoggerSaver());
+        LoggerFilter filterStub = mock(LoggerFilter.class);
+        when(filterStub.filter(any(String.class))).thenReturn(true);
+        Logger sut = new Logger(filterStub, saverSpy);
+        //endregion
+
+        //region When
+       sut.log("test string");
+       //endregion
+
+        //region Then
+        verify(saverSpy).save("test string");
+        //endregion
+    }
+
     //region Demo
     private static<T> T myMock(Class<T> typeInfo) {
         return null;
     }
     //endregion
+}
+
+class DAO {
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
