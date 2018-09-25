@@ -145,7 +145,7 @@ public class ArrayListTest {
         //endregion
     }
 
-    @Test
+    @Test @Ignore
     public void hashSetShouldCallHashCodeWhenAddElementIT() {
         //region Given
         LoggerSaver saverSpy = spy(new ConsoleLoggerSaver());
@@ -161,6 +161,33 @@ public class ArrayListTest {
         //region Then
         verify(saverSpy).save("test string");
         //endregion
+    }
+
+    @Test
+    public void tzarShouldSeePartyHardWhenCameAcrossVillage() {
+        LoggerFilter filterStub = mock(LoggerFilter.class);
+        when(filterStub.filter(anyString())).thenAnswer(
+                callContext -> {
+                    System.out.println(">>>>");
+                    return true;
+                });
+
+        Logger sut = new Logger(
+                new MockitoFilterBuilder()
+                    .withBehavior(() -> true) //Scopes: stubs, data in files | DB
+                .build(),
+                new MockitoSaverBuilder()
+                    .withPath() //Configuration By Exception
+                    .withFileName(8787)
+                    .withEncodind()
+                    .withConnection(
+                            new DerbyConnectionBuilder()
+                                .withDBUrl()
+                                .withInMemory(true)
+                            .buid()
+                    )
+                .build()
+        );
     }
 
     //region Demo
