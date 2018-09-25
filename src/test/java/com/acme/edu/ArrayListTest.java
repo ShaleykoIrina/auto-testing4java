@@ -145,12 +145,12 @@ public class ArrayListTest {
         //endregion
     }
 
-    @Test @Ignore
+    @Test
     public void hashSetShouldCallHashCodeWhenAddElementIT() {
         //region Given
         LoggerSaver saverSpy = spy(new ConsoleLoggerSaver());
         LoggerFilter filterStub = mock(LoggerFilter.class);
-        when(filterStub.filter(any(String.class))).thenReturn(true);
+        when(filterStub.filter("test string")).thenReturn(true);
         Logger sut = new Logger(filterStub, saverSpy);
         //endregion
 
@@ -171,7 +171,7 @@ public class ArrayListTest {
                     System.out.println(">>>>");
                     return true;
                 });
-
+/*
         Logger sut = new Logger(
                 new MockitoFilterBuilder()
                     .withBehavior(() -> true) //Scopes: stubs, data in files | DB
@@ -188,6 +188,7 @@ public class ArrayListTest {
                     )
                 .build()
         );
+        */
     }
 
     //region Demo

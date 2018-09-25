@@ -5,6 +5,9 @@ public class Logger {
     private LoggerSaver loggerSaver;
 
     public Logger(LoggerFilter loggerFilter, LoggerSaver loggerSaver) {
+        if (loggerFilter == null) throw new IllegalStateException("filter can't");
+        if (loggerSaver == null) throw new IllegalStateException("saver can't");
+
         this.loggerFilter = loggerFilter;
         this.loggerSaver = loggerSaver;
     }
