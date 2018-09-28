@@ -145,7 +145,7 @@ public class ArrayListTest {
         //endregion
     }
 
-    @Test
+    @Test @Ignore
     public void hashSetShouldCallHashCodeWhenAddElementIT() {
         //region Given
         LoggerSaver saverSpy = spy(new ConsoleLoggerSaver());
