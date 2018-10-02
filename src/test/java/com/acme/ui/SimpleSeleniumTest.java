@@ -31,10 +31,6 @@ public class SimpleSeleniumTest {
         WebElement inputField = driver.findElement(By.id("text"));
         inputField.sendKeys("test");
         inputField.submit();
-
-        YandexSearchPage yandexSearchPage = new YandexSearchPage();
-        yandexSearchPage.getNeededLinkText();
-        yandexSearchPage.searchInput("""""")
     }
 
     @After

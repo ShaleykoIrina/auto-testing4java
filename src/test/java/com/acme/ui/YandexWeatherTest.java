@@ -18,5 +18,4 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-htmlreport"
         }
 )
-@Ignore
 public class YandexWeatherTest {}
