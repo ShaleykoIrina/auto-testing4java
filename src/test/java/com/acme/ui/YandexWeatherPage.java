@@ -19,7 +19,7 @@ public class YandexWeatherPage {
         PageFactory.initElements(driver, this);
     }
 
-    public YandexWeatherDetailedPage clickOnWeatherLink() {
+    public YandexWeatherDetailedPage checkWeather() {
         weatherLink.click();
         return new YandexWeatherDetailedPage(driver);
     }

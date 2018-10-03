@@ -2,7 +2,6 @@ package com.acme.features;
 
 import com.acme.ui.YandexWeatherDetailedPage;
 import com.acme.ui.YandexWeatherPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -16,6 +15,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+
+//BDD = (A)TDD + DDD (Eric Evans)
 public class YandexWeatherSteps {
     private WebDriver driver;
     private YandexWeatherPage weatherPage;
@@ -46,7 +47,9 @@ public class YandexWeatherSteps {
     @When("^I click Погода$")
     public void iClickПогода() throws Throwable {
         weatherDetailedPage = weatherPage
-                .clickOnWeatherLink();
+                .checkWeather(); //DSL = DDD-API
+        //DROOLS a la JBehave || Gherkin (Cucumber/java)
+        //xtext || MPS
     }
 
     @And("^then click подробно$")
